@@ -2,12 +2,12 @@ echo "Update & upgrade"
 apt-get -y update
 apt-get -y upgrade
 echo "Install building tools"
-apt-get -y install autoconf-archive automake g++ libtool libleptonica-dev pkg-config
+apt-get -y install autoconf-archive automake g++ libtool libleptonica-dev pkg-config tesseract-ocr-rus
 
 echo "Download leptonica"
-wget http://www.leptonica.com/source/leptonica-1.75.3.tar.gz
+wget http://www.leptonica.com/source/leptonica-1.75.3.tar.gz 
 tar xvf leptonica-1.75.3.tar.gz
-rm leptonica-1.75.3.tar.gz
+rm leptonica-1.75.3.tar.gz 
 
 echo "Compile leptonica"
 cd leptonica-1.75.3
@@ -28,9 +28,6 @@ echo "Compile tesseract"
 ./configure
 make
 make install
-
-#echo "Install tesseract lang"
-#apt-get install tesseract-ocr-rus
 
 cd -
 rm -r tesseract-ocr
