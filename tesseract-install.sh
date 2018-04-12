@@ -16,7 +16,7 @@ make
 make install
 
 cd -
-rm -r leptonica-1.75.3
+#rm -r leptonica-1.75.3
 
 echo "Clone tesseract 4 source"
 git clone https://github.com/tesseract-ocr/tesseract.git tesseract-ocr
@@ -33,4 +33,4 @@ echo "Install tesseract lang"
 apt-get install tesseract-ocr-rus
 
 cd -
-rm -r tesseract-ocr
+#rm -r tesseract-ocr
