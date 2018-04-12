@@ -29,8 +29,8 @@ echo "Compile tesseract"
 make
 make install
 
-echo "Install tesseract lang"
-apt-get install tesseract-ocr-rus
+#echo "Install tesseract lang"
+#apt-get install tesseract-ocr-rus
 
 cd -
 rm -r tesseract-ocr
