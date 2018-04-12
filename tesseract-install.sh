@@ -27,8 +27,3 @@ echo "Compile tesseract"
 make
 make install
 ldconfig
-
-cd -
-rm leptonica-1.75.3.tar.gz
-rm -r leptonica-1.75.3
-rm -r tesseract-ocr
