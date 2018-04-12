@@ -6,3 +6,4 @@ LABEL maintainer="bashkirtsevich@gmail.com"
 WORKDIR /usr/distr
 ADD tesseract-install.sh .
 RUN ./tesseract-install.sh
+RUN pip install pytesseract==0.2.0
