@@ -7,7 +7,6 @@ apt-get -y install autoconf-archive automake g++ libtool libleptonica-dev pkg-co
 echo "Download leptonica"
 wget http://www.leptonica.com/source/leptonica-1.75.3.tar.gz 
 tar xvf leptonica-1.75.3.tar.gz
-rm leptonica-1.75.3.tar.gz 
 
 echo "Compile leptonica"
 cd leptonica-1.75.3
@@ -16,7 +15,6 @@ make
 make install
 
 cd -
-rm -r leptonica-1.75.3
 
 echo "Clone tesseract 4 source"
 git clone https://github.com/tesseract-ocr/tesseract.git tesseract-ocr
@@ -28,6 +26,9 @@ echo "Compile tesseract"
 ./configure
 make
 make install
+ldconfig
 
 cd -
+rm leptonica-1.75.3.tar.gz
+rm -r leptonica-1.75.3
 rm -r tesseract-ocr
