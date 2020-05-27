@@ -12,8 +12,17 @@ script:
   - echo "no tests!"
 
 after_success:
-  - docker --version
-  - docker build -t py-tesseract4 .
-  - docker tag py-tesseract4 $DOCKER_USERNAME/py-tesseract4
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+
+  - docker build -t $DOCKER_USERNAME/py-tesseract4:4.0.0-beta.1 --build-arg TAG=4.0.0-beta.1 .
+  - docker push $DOCKER_USERNAME/py-tesseract4:4.0.0-beta.1
+
+  - docker build -t $DOCKER_USERNAME/py-tesseract4:4.0.0 --build-arg TAG=4.0.0 .
+  - docker push $DOCKER_USERNAME/py-tesseract4:4.0.0
+
+  - docker build -t $DOCKER_USERNAME/py-tesseract4:4.1.0 --build-arg TAG=4.1.0 .
+  - docker push $DOCKER_USERNAME/py-tesseract4:4.1.0
+
+  - docker build -t $DOCKER_USERNAME/py-tesseract4:4.1.1 -t $DOCKER_USERNAME/py-tesseract4:latest --build-arg TAG=4.1.1 .
+  - docker push $DOCKER_USERNAME/py-tesseract4:4.1.1
   - docker push $DOCKER_USERNAME/py-tesseract4:latest
